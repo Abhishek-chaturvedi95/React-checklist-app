@@ -15,8 +15,11 @@ class App extends React.Component {
         this.setState(prev => {
             const updated = prev.todos.map(item => {
                 if(item.id === id){
-                    item.completed = !item.completed
-                }
+                    //Return a new object with only the completed value reversed
+                    return{
+                        ...item,
+                        completed = !item.completed
+                    }
                 return item
             })
             return {
